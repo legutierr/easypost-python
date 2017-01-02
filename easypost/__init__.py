@@ -32,10 +32,12 @@ except ImportError:
                           'Update requests via "pip install -U requests" or contact '
                           'us at contact@easypost.com.')
     else:
-        if major < 1:
-            raise ImportError('EasyPost requires an up to date requests library. Update '
-                              'requests via "pip install -U requests" or contact us '
-                              'at contact@easypost.com.')
+        if (major, minor) != (0, 14):
+            raise ImportError('This version of the EasyPost library requires 0.14.*')
+        ## if major < 1:
+        ##     raise ImportError('EasyPost requires an up to date requests library. Update '
+        ##                       'requests via "pip install -U requests" or contact us '
+        ##                       'at contact@easypost.com.')
 
 # config
 api_key = None
